@@ -35,7 +35,8 @@ public class Order implements Serializable {
 
 	private int orderId;
 	private String username;
-	private LocalDateTime orderDate;
+	private String orderDate;
+//	private LocalDateTime orderDate;
 	private String shipAddress1;
 	private String shipAddress2;
 	private String shipCity;

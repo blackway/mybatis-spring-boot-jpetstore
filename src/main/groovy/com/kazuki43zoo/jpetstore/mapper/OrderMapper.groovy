@@ -52,7 +52,7 @@ interface OrderMapper {
             CREDITCARD,
             EXPRDATE AS expiryDate,
             LOCALE,
-            ORDERDATE,
+            strftime('%Y-%m-%d %H:%M:%S', ORDERDATE) as ORDERDATE,
             ORDERS.ORDERID,
             TOTALPRICE,
             USERID AS username,

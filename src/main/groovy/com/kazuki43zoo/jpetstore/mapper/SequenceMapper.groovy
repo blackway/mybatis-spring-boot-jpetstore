@@ -28,6 +28,17 @@ import org.apache.ibatis.annotations.Update
 @CacheNamespace
 interface SequenceMapper {
 
+//    @Select('''
+//        SELECT
+//            NAME,
+//            NEXTID
+//        FROM
+//            SEQUENCE
+//        WHERE
+//            NAME = #{name}
+//        FOR UPDATE
+//    ''')
+//    Sequence getSequence(String name);
     @Select('''
         SELECT
             NAME,
@@ -36,7 +47,6 @@ interface SequenceMapper {
             SEQUENCE
         WHERE
             NAME = #{name}
-        FOR UPDATE
     ''')
     Sequence getSequence(String name);
 

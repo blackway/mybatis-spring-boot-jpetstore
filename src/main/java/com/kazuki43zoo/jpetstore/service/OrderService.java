@@ -29,6 +29,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Clock;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,7 +52,8 @@ public class OrderService {
 
 		int orderId = generateOrderId();
 		order.setOrderId(orderId);
-		order.setOrderDate(LocalDateTime.now(clock));
+		order.setOrderDate(LocalDateTime.now(clock).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+//		order.setOrderDate(LocalDateTime.now(clock));
 		order.setCourier("UPS");
 		order.setLocale("CA");
 		order.setStatus("P");

@@ -45,8 +45,11 @@
                             <span th:text="${order.orderId}"></span>
                         </a>
                     </td>
+<!--                    <td>-->
+<!--                        <span th:text="${#temporals.format(order.orderDate, 'yyyy/MM/dd HH:mm:ss')}"></span>-->
+<!--                    </td>-->
                     <td>
-                        <span th:text="${#temporals.format(order.orderDate, 'yyyy/MM/dd HH:mm:ss')}"></span>
+                        <span th:text="${order.orderDate}"></span>
                     </td>
                     <td>
                         $<span th:text="${#numbers.formatDecimal(order.totalPrice, 1, 'COMMA', 2, 'POINT')}"></span>
